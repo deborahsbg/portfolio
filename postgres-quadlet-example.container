@@ -1,0 +1,20 @@
+[Unit]
+Description=PostgreSQL Database
+After=network-online.target
+
+[Container]
+Image=iad.ocir.io/namespace/postgres:latest
+ContainerName=postgres
+Network=app-network
+PublishPort=127.0.0.1:5432:5432
+Volume=postgres_data:/var/lib/postgresql/data
+Secret=pg-password,type=env,target=POSTGRES_PASSWORD
+Environment=POSTGRES_USER=app_user
+Environment=POSTGRES_DB=app_db
+
+[Service]
+Restart=always
+TimeoutStartSec=120
+
+[Install]
+WantedBy=default.target
