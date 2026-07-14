@@ -29,3 +29,4 @@ Always Free-tier platforms with enterprise security.
 - OCI Architect Associate (in progress)
 - OCI Operations Professional (in progress)
 # Portfolio update
+test credential storage
